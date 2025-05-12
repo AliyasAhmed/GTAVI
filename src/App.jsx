@@ -31,6 +31,9 @@ export default function App() {
       })
   })
   // Mouse trigger animation
+  const scaleValue = window.innerWidth < 768 ? 0.5 : 1.1;
+  const charValue = window.innerWidth < 760 ? -250 : -625;
+  const charScale = window.innerWidth < 760 ? 1 : 0.5;
   useGSAP(() => {
     if (!showcontent) return;
     gsap.to('.sky', {
@@ -48,16 +51,16 @@ export default function App() {
       ease: "Expo.easeInOut"
     })
     gsap.to('.text', {
-      scale: '1.1',
+      scale: scaleValue,
       rotate: 0,
       duration: 4,
       delay: '-.8',
       ease: "Expo.easeInOut"
     })
     gsap.to('.char', {
-      scale: '0.5',
-      x:'-50%',
-      bottom:'-605',
+      scale: charScale,
+      x: '-50%',
+      bottom: charValue,
       rotate: 0,
       duration: 4,
       delay: '-.4',
@@ -139,29 +142,46 @@ export default function App() {
               <img className='absolute bg scale-[1.5] rotate-[-20deg] top-0 left-0 w-full h-full object-cover' src="./bg1.png" alt="" />
               {/* Rockstar text */}
               <div className='text text-white absolute scale-[1.5] rotate-[-40%] top-40 left-1/2 -translate-x-1/2 flex flex-col gap-3'>
-                {['grand', 'theft', 'auto'].map((text, i) => (
+                {['grand', 'theft', 'auto VI'].map((text, i) => (
 
                   <h1 className={`text-[8rem] leading-none ${i === 1 ? 'ml-10' : '-ml-20'}`} key={i}>{text}</h1>
                 ))}
               </div>
+              {/* Main Character */}
               <img className='absolute char -bottom-[150%] left-1/2 -translate-x-1/2 scale-[1] rotate-[-20%]' src="./boy.png" alt="" />
             </div>
+            {/* Bottom navbar */}
             <div className="btmbar text-white w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0">
-              <div className='flex gap-4 items-center text-[1.5rem]'>
+              <div className='flex gap-4 items-center text-[0.8rem] lg:text-[1.5rem]'>
                 <h3>Scroll Down</h3>
               </div>
-              <img className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[7vh]' src="./ps5.png" alt="" />
+              <img className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[4vh] lg:h-[7vh]' src="./ps5.png" alt="" />
             </div>
           </div>
           {/* second page section */}
-          <div className="w-full bg-black h-screen flex items-center justify-center">
-            <div className="cntnr flex items-center justify-center text-white w-full h-[20%]">
-              <div className="leftimg relative w-1/2 h-[full]">
-                <img className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.3]' src="./imag.png" alt="" />
+          <div className="w-full bg-black min-h-screen flex items-center justify-center p-4">
+            <div className="cntnr grid grid-cols-1 lg:grid-cols-2 gap-10 items-center text-white w-full max-w-6xl">
+
+              {/* Left Image */}
+              <div className="leftimg relative w-full h-64 md:h-96">
+                <img
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.5] md:scale-[1] lg:scale-[2] max-w-full max-h-full"
+                  src="./imag.png"
+                  alt=""
+                />
               </div>
-              <div className="rightimg">
-                <h1 className='text-[5rem] leading-none mb-5'>For Pc Gamers</h1>
-                <a target='_blank' href="https://www.youtube.com/watch?v=l60MnDJklnM"><button className='bg-yellow-300 text-2xl p-5 text-black rounded-xl hover:bg-yellow-400 transition delay-150 hover:cursor-pointer'>Download now</button></a>
+
+              {/* Right Text */}
+              <div className="rightimg text-center lg:text-left">
+                <h1 className="text-3xl md:text-5xl lg:text-[5rem] leading-tight mb-5">For PC Gamers</h1>
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/watch?v=l60MnDJklnM"
+                >
+                  <button className="bg-yellow-300 text-lg md:text-2xl px-6 py-3 md:p-5 text-black rounded-xl hover:bg-yellow-400 transition delay-150 hover:cursor-pointer">
+                    Download now
+                  </button>
+                </a>
               </div>
             </div>
           </div>
