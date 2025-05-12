@@ -71,7 +71,7 @@ export default function App() {
 
       // const xMove = e.clientX / window.innerWidth // this value will be from 0 - 1
       const xMove = (e.clientX / window.innerWidth - .5) * 40; // this will have value of -20 to +20
-      const yMove = (e.clientY / innerWidth - .5) * 40;
+      const yMove = (e.clientY / window.innerWidth - .5) * 40;
 
       gsap.to('.imagesdiv .text', {
         x: `${xMove * 0.2}%`,
@@ -86,8 +86,28 @@ export default function App() {
         y: `${yMove * 0.1}%`
       });
     })
+    if (window.innerWidth < 768) {
+      window.addEventListener('deviceorientation', (e) => {
+        const xMove = (e.gamma / 45) * 20; // gamma = left/right tilt (-90 to 90)
+        const yMove = (e.beta / 90) * 20;  // beta = front/back tilt (-180 to 180)
+
+        gsap.to('.imagesdiv .text', {
+          x: `${xMove * 0.2}%`,
+          y: `${yMove * 0.1}%`
+        });
+        gsap.to('.sky', {
+          x: `${xMove * 0.3}%`,
+          y: `${yMove * 0.3}%`
+        });
+        gsap.to('.bg', {
+          x: `${xMove * 0.1}%`,
+          y: `${yMove * 0.1}%`
+        });
+      });
+    }
 
   }, [showcontent])
+
   return (
     <>
       {/* svg section */}
