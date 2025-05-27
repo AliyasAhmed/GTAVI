@@ -129,7 +129,6 @@ export default function App() {
         start: "top 20%",
         end: "bottom 100%",
         scrub: 8.1,
-        markers:true
       }
     });
   }, [showcontent]);
