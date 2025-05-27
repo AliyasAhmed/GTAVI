@@ -1,9 +1,15 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useState } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useRef } from 'react';
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   let [showcontent, SetShowContent] = useState(false)
+  const sec3 = useRef()
   // loading animation
   useGSAP(() => {
     const tl = gsap.timeline()
@@ -108,6 +114,25 @@ export default function App() {
 
   }, [showcontent])
 
+
+  useGSAP(() => {
+    if (!showcontent) return;
+
+    gsap.to(sec3.current, {
+      delay: -1.8,
+      ease: "Expo.easeInOut",
+      transformOrigin: "50% 50%",
+      scale: 30,
+      opacity:0,
+      scrollTrigger: {
+        trigger: ".sec3",
+        start: "top 20%",
+        end: "bottom 100%",
+        scrub: 8.1,
+        markers:true
+      }
+    });
+  }, [showcontent]);
   return (
     <>
       {/* svg section */}
@@ -205,6 +230,38 @@ export default function App() {
               </div>
             </div>
           </div>
+          {/* sec 3 */}
+          <div className="sec3 h-[400vh]">
+            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+              <defs>
+                <mask id="viMask">
+                  <rect width="100%" height="100%" fill="black" />
+                  <g ref={sec3} className="vi-mask-group">
+                    <text
+                      x="50%"
+                      y="50%"
+                      fontSize="250"
+                      textAnchor="middle"
+                      fill="white"
+                      dominantBaseline="middle"
+                      fontFamily="Arial Black"
+                    >
+                      VI
+                    </text>
+                  </g>
+                </mask>
+              </defs>
+              <image
+                href="src\assets\ss.png"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="xMidYMid slice"
+                mask="url(#viMask)"
+                className='object-cover'
+              />
+            </svg>
+          </div>
+          <div className="sec4 h-screen"><img className='object-cover w-full h-full' src="src\assets\Jason_and_Lucia_02_With_Logos_landscape.jpg" alt="" /></div>
         </div>
       }
     </>
