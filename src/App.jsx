@@ -123,7 +123,7 @@ export default function App() {
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
       scale: 30,
-      opacity:0,
+      opacity: 0,
       scrollTrigger: {
         trigger: ".sec3",
         start: "top 20%",
@@ -230,7 +230,7 @@ export default function App() {
             </div>
           </div>
           {/* sec 3 */}
-          <div className="sec3 h-[400vh]">
+          <div className="sec3 h-[400vh] ">
             <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
               <defs>
                 <mask id="viMask">
@@ -251,7 +251,7 @@ export default function App() {
                 </mask>
               </defs>
               <image
-                href="src\assets\ss.png"
+                href="/ss.png"
                 width="100%"
                 height="100%"
                 preserveAspectRatio="xMidYMid slice"
@@ -260,7 +260,11 @@ export default function App() {
               />
             </svg>
           </div>
-          <div className="sec4 h-screen"><img className='object-cover w-full h-full' src="src\assets\Jason_and_Lucia_02_With_Logos_landscape.jpg" alt="" /></div>
+          <div className="relative cont h-screen">
+
+          <div className="sec4 h-screen"><img className='object-cover w-full h-full' src="/Jason_and_Lucia_02_With_Logos_landscape.jpg" alt="" /></div>
+          <div className="fadeeff w-full p-20 bg-gradient-to-b from-black to-transparent absolute top-0"></div>
+          </div>
         </div>
       }
     </>
