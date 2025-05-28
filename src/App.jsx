@@ -197,8 +197,8 @@ export default function App() {
         </svg>
       </div>
       {showcontent &&
-        <div className='main w-full'>
-          <div className='relative landing w-full h-screen bg-black'>
+        <div className=' w-full'>
+          <div className=' main relative landing w-full h-screen bg-black'>
             {/* Navbar */}
             <div className="absolute top-0 left-0 z-[10] navbar w-full py-10 px-10">
               <div className="logo flex gap-7">
@@ -264,43 +264,40 @@ export default function App() {
 
           {/* sec 3 */}
           <div className="cont relative">
-
-          
-          <div className="sec3 h-[400vh] ">
-            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
-              <defs>
-                <mask id="viMask">
-                  <rect width="100%" height="100%" fill="black" />
-                  <g ref={sec3} className="vi-mask-group">
-                    <text
-                      x="50%"
-                      y="50%"
-                      fontSize="250"
-                      textAnchor="middle"
-                      fill="white"
-                      dominantBaseline="middle"
-                      fontFamily="Arial Black"
-                    >
-                      GTA
-                    </text>
-                  </g>
-                </mask>
-              </defs>
-              <image
-                href="/ss.png"
-                width="100%"
-                height="100%"
-                preserveAspectRatio="xMidYMid slice"
-                mask="url(#viMask)"
-                className='object-cover'
-              />
-            </svg>
-            <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
+            <div className="sec3 h-[400vh] flex justify-center ">
+              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+                <defs>
+                  <mask id="viMask">
+                    <rect width="100%" height="100%" fill="black" />
+                    <g ref={sec3} className="vi-mask-group">
+                      <text
+                        x="50%"
+                        y="50%"
+                        fontSize="250"
+                        textAnchor="middle"
+                        fill="white"
+                        dominantBaseline="middle"
+                        fontFamily="Arial Black"
+                      >
+                        GTA
+                      </text>
+                    </g>
+                  </mask>
+                </defs>
+                <image
+                  href="/Jason_and_Lucia_02_With_Logos_landscape.jpg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="xMidYMid slice"
+                  mask="url(#viMask)"
+                  className='object-cover'
+                />
+              </svg>
+              <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
+            </div>
           </div>
-          </div>
-          <div className='h-[70vh] bg-black relative'></div>
-          <div className="sec4 h-[400vh]">
-            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+          <div className="sec4 h-[400vh] flex justify-center">
+            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-screen">
               <defs>
                 <mask id="viMask1">
                   <rect width="100%" height="100%" fill="black" />
@@ -325,7 +322,6 @@ export default function App() {
                 height="100%"
                 preserveAspectRatio="xMidYMid slice"
                 mask="url(#viMask1)"
-                className='object-cover w-full h-full'
               />
             </svg>
           </div>
