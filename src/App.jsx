@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function App() {
   let [showcontent, SetShowContent] = useState(false)
   const sec3 = useRef()
+  const sec4 = useRef()
   // loading animation
   useGSAP(() => {
     const tl = gsap.timeline()
@@ -123,15 +124,46 @@ export default function App() {
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
       scale: 30,
-      opacity: 0,
+      // opacity: 0,
       scrollTrigger: {
         trigger: ".sec3",
         start: "top 20%",
         end: "bottom 100%",
         scrub: 8.1,
+        onLeave: () => {
+          const img = document.querySelector('.sec3 image');
+          if (img) img.setAttribute('mask', 'none');
+        },
+        onEnterBack: () => {
+          const img = document.querySelector('.sec3 image');
+          if (img) img.setAttribute('mask', 'url(#viMask)')
+
+        }
+      }
+    });
+    gsap.to(sec4.current, {
+      delay: -1.8,
+      ease: "Expo.easeInOut",
+      transformOrigin: "50% 50%",
+      scale: 30,
+      // opacity: 0,
+      scrollTrigger: {
+        trigger: ".sec4",
+        start: "top 20%",
+        end: "bottom 100%",
+        scrub: 8.1,
+        onLeave: () => {
+          const img = document.querySelector('.sec4 image');
+          if (img) img.setAttribute("mask", "none")
+        },
+        onEnterBack: () => {
+          const img = document.querySelector('.sec4 image');
+          if (img) img.setAttribute('mask', 'url(#viMask1)')
+        }
       }
     });
   }, [showcontent]);
+
   return (
     <>
       {/* svg section */}
@@ -229,7 +261,11 @@ export default function App() {
               </div>
             </div>
           </div>
+
           {/* sec 3 */}
+          <div className="cont relative">
+
+          
           <div className="sec3 h-[400vh] ">
             <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
               <defs>
@@ -245,7 +281,7 @@ export default function App() {
                       dominantBaseline="middle"
                       fontFamily="Arial Black"
                     >
-                      VI
+                      GTA
                     </text>
                   </g>
                 </mask>
@@ -259,11 +295,39 @@ export default function App() {
                 className='object-cover'
               />
             </svg>
+            <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
           </div>
-          <div className="relative cont h-screen">
-
-          <div className="sec4 h-screen"><img className='object-cover w-full h-full' src="/Jason_and_Lucia_02_With_Logos_landscape.jpg" alt="" /></div>
-          <div className="fadeeff w-full p-20 bg-gradient-to-b from-black to-transparent absolute top-0"></div>
+          </div>
+          <div className='h-[70vh] bg-black relative'></div>
+          <div className="sec4 h-[400vh]">
+            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+              <defs>
+                <mask id="viMask1">
+                  <rect width="100%" height="100%" fill="black" />
+                  <g ref={sec4} className="vi-mask-group">
+                    <text
+                      x="50%"
+                      y="50%"
+                      fontSize="250"
+                      textAnchor="middle"
+                      fill="white"
+                      dominantBaseline="middle"
+                      fontFamily="Arial Black"
+                    >
+                      VI
+                    </text>
+                  </g>
+                </mask>
+              </defs>
+              <image
+                href="/DreQuan_Priest_landscape.jpg"
+                width="100%"
+                height="100%"
+                preserveAspectRatio="xMidYMid slice"
+                mask="url(#viMask1)"
+                className='object-cover w-full h-full'
+              />
+            </svg>
           </div>
         </div>
       }
