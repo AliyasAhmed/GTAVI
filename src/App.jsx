@@ -123,7 +123,7 @@ export default function App() {
       delay: -1.8,
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
-      scale: 30,
+      scale: 50,
       // opacity: 0,
       scrollTrigger: {
         trigger: ".sec3",
@@ -145,7 +145,7 @@ export default function App() {
       delay: -1.8,
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
-      scale: 30,
+      scale: 26,
       // opacity: 0,
       scrollTrigger: {
         trigger: ".sec4",
@@ -264,7 +264,7 @@ export default function App() {
 
           {/* sec 3 */}
           <div className="cont relative">
-            <div className="sec3 h-[400vh] flex justify-center ">
+            <div className="sec3 h-[500vh] flex justify-center ">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask">
@@ -296,7 +296,7 @@ export default function App() {
               <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
             </div>
           </div>
-          <div className="sec4 h-[400vh] flex justify-center">
+          <div className="sec4 h-[500vh] flex justify-center">
             <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-screen">
               <defs>
                 <mask id="viMask1">
