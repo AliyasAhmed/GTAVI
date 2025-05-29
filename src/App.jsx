@@ -115,7 +115,7 @@ export default function App() {
 
   }, [showcontent])
 
-// sec3 and sec4 animation
+  // sec3 and sec4 animation
   useGSAP(() => {
     if (!showcontent) return;
 
@@ -169,11 +169,11 @@ export default function App() {
       transformOrigin: "50% 50%",
       scale: 26,
     }, 0);
-    tII.to('.sec4 image',{
-      scale:0.9,
+    tII.to('.sec4 image', {
+      scale: 0.9,
       transformOrigin: "50% 50%",
       ease: "Expo.easeInOut",
-    },0)
+    }, 0)
   }, [showcontent]);
 
   return (
@@ -308,36 +308,40 @@ export default function App() {
               <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
             </div>
           </div>
-          <div className="sec4 h-[200vh] flex justify-center">
-            <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-screen">
-              <defs>
-                <mask id="viMask1">
-                  <rect width="100%" height="100%" fill="black" />
-                  <g ref={sec4} className="vi-mask-group">
-                    <text
-                      x="50%"
-                      y="50%"
-                      fontSize="250"
-                      textAnchor="middle"
-                      fill="white"
-                      dominantBaseline="middle"
-                      fontFamily="Arial Black"
-                    >
-                      VI
-                    </text>
-                  </g>
-                </mask>
-              </defs>
-              <image
-                href="/DreQuan_Priest_landscape.jpg"
-                width="100%"
-                height="160%"
-                mask="url(#viMask1)"
-                x="0"
-                y="0"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </svg>
+          <div className="relative">
+
+            <div className="sec4 h-[200vh] flex justify-center">
+              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+                <defs>
+                  <mask id="viMask1">
+                    <rect width="100%" height="100%" fill="black" />
+                    <g ref={sec4} className="vi-mask-group">
+                      <text
+                        x="50%"
+                        y="50%"
+                        fontSize="250"
+                        textAnchor="middle"
+                        fill="white"
+                        dominantBaseline="middle"
+                        fontFamily="Arial Black"
+                      >
+                        VI
+                      </text>
+                    </g>
+                  </mask>
+                </defs>
+                <image
+                  href="/DreQuan_Priest_landscape.jpg"
+                  width="100%"
+                  height="160%"
+                  mask="url(#viMask1)"
+                  x="0"
+                  y="0"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </svg>
+            </div>
+            <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
           </div>
         </div>
       }
