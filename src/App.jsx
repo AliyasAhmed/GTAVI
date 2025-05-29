@@ -129,7 +129,7 @@ export default function App() {
         trigger: ".sec3",
         start: "top 20%",
         end: "bottom 100%",
-        scrub: 8.1,
+        scrub: 3,
         onLeave: () => {
           const img = document.querySelector('.sec3 image');
           if (img) img.setAttribute('mask', 'none');
@@ -151,7 +151,7 @@ export default function App() {
         trigger: ".sec4",
         start: "top 20%",
         end: "bottom 100%",
-        scrub: 8.1,
+        scrub: 3,
         onLeave: () => {
           const img = document.querySelector('.sec4 image');
           if (img) img.setAttribute("mask", "none")
@@ -264,7 +264,7 @@ export default function App() {
 
           {/* sec 3 */}
           <div className="cont relative">
-            <div className="sec3 h-[500vh] flex justify-center ">
+            <div className="sec3 h-[200vh] flex justify-center ">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask">
@@ -296,7 +296,7 @@ export default function App() {
               <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
             </div>
           </div>
-          <div className="sec4 h-[500vh] flex justify-center">
+          <div className="sec4 h-[200vh] flex justify-center">
             <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-screen">
               <defs>
                 <mask id="viMask1">
