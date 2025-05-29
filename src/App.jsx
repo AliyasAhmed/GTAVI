@@ -119,12 +119,7 @@ export default function App() {
   useGSAP(() => {
     if (!showcontent) return;
 
-    gsap.to(sec3.current, {
-      delay: -1.8,
-      ease: "Expo.easeInOut",
-      transformOrigin: "50% 50%",
-      scale: 50,
-      // opacity: 0,
+    const tI = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec3",
         start: "top 20%",
@@ -140,13 +135,20 @@ export default function App() {
 
         }
       }
-    });
-    gsap.to(sec4.current, {
-      delay: -1.8,
+    })
+    tI.to(sec3.current, {
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
-      scale: 26,
-      // opacity: 0,
+      scale: 50,
+    }, 0);
+    tI.to('.sec3 image', {
+      scale: 0.9,
+      transformBox: "fill-box",
+      transformOrigin: "50% 50%",
+      ease: "Expo.easeInOut",
+    }, 0)
+
+    const tII = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec4",
         start: "top 20%",
@@ -161,7 +163,17 @@ export default function App() {
           if (img) img.setAttribute('mask', 'url(#viMask1)')
         }
       }
-    });
+    })
+    tII.to(sec4.current, {
+      ease: "Expo.easeInOut",
+      transformOrigin: "50% 50%",
+      scale: 26,
+    }, 0);
+    tII.to('.sec4 image',{
+      scale:0.9,
+      transformOrigin: "50% 50%",
+      ease: "Expo.easeInOut",
+    },0)
   }, [showcontent]);
 
   return (
@@ -264,7 +276,7 @@ export default function App() {
 
           {/* sec 3 */}
           <div className="cont relative">
-            <div className="sec3 h-[200vh] flex justify-center ">
+            <div className="sec3 h-[200vh] flex justify-center">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask">
@@ -287,7 +299,7 @@ export default function App() {
                 <image
                   href="/Jason_and_Lucia_02_With_Logos_landscape.jpg"
                   width="100%"
-                  height="100%"
+                  height="115%"
                   preserveAspectRatio="xMidYMid slice"
                   mask="url(#viMask)"
                   className='object-cover'
@@ -319,9 +331,11 @@ export default function App() {
               <image
                 href="/DreQuan_Priest_landscape.jpg"
                 width="100%"
-                height="100%"
-                preserveAspectRatio="xMidYMid slice"
+                height="160%"
                 mask="url(#viMask1)"
+                x="0"
+                y="0"
+                preserveAspectRatio="xMidYMid slice"
               />
             </svg>
           </div>
