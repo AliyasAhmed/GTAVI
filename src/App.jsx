@@ -122,9 +122,11 @@ export default function App() {
     const tI = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec3",
-        start: "top 20%",
-        end: "bottom 100%",
-        scrub: 3,
+        start: "top top",
+        end: "+=2000",
+        anticipatePin: 1,
+        pin:true,
+        scrub: 5,
         onLeave: () => {
           const img = document.querySelector('.sec3 image');
           if (img) img.setAttribute('mask', 'none');
@@ -148,12 +150,16 @@ export default function App() {
       ease: "Expo.easeInOut",
     }, 0)
 
+    // sec4 animation
+
     const tII = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec4",
-        start: "top 20%",
-        end: "bottom 100%",
-        scrub: 3,
+        start: "top top",
+        end: "+=2000",
+        pin:true,
+        anticipatePin: 1,
+        scrub: 4,
         onLeave: () => {
           const img = document.querySelector('.sec4 image');
           if (img) img.setAttribute("mask", "none")
@@ -167,7 +173,7 @@ export default function App() {
     tII.to(sec4.current, {
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
-      scale: 26,
+      scale: 25,
     }, 0);
     tII.to('.sec4 image', {
       scale: 0.9,
@@ -200,7 +206,7 @@ export default function App() {
             </mask>
           </defs>
           <image
-            href="./bg1.png"
+            href="./ss.png"
             width="100%"
             height="100%"
             preserveAspectRatio="xMidYMid slice"
@@ -276,8 +282,8 @@ export default function App() {
 
           {/* sec 3 */}
           <div className="cont relative">
-            <div className="sec3 h-[200vh] flex justify-center">
-              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+            <div className="sec3 h-full flex justify-center">
+              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="h-screen w-full">
                 <defs>
                   <mask id="viMask">
                     <rect width="100%" height="100%" fill="black" />
@@ -310,8 +316,8 @@ export default function App() {
           </div>
           <div className="relative">
 
-            <div className="sec4 h-[200vh] flex justify-center">
-              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
+            <div className="sec4 h-full flex justify-center">
+              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="h-screen w-full">
                 <defs>
                   <mask id="viMask1">
                     <rect width="100%" height="100%" fill="black" />
@@ -333,7 +339,7 @@ export default function App() {
                 <image
                   href="/DreQuan_Priest_landscape.jpg"
                   width="100%"
-                  height="160%"
+                  height="150%"
                   mask="url(#viMask1)"
                   x="0"
                   y="0"
