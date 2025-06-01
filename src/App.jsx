@@ -325,7 +325,7 @@ export default function App() {
           {/* <div className="spacer h-[50vh] bg-[black]"></div> */}
           {/* sec 3 */}
           <div className="cont relative bg-[#14131C]">
-            <div className="sec3 flex h-[300vh]  justify-center">
+            <div className="sec3 flex h-[300vh] justify-center">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask">
@@ -357,9 +357,10 @@ export default function App() {
               <div className='w-full py-15 px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
             </div>
           </div>
-          <div className="relative  ">
+          {/* sec 4 */}
+          <div className="relative bg-[#14131C]">
 
-            <div className="sec4 flex h-[300vh] justify-center bg-[#14131C]">
+            <div className="sec4 flex h-[300vh] justify-center ">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask1">
