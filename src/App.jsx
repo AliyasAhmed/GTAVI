@@ -123,10 +123,8 @@ export default function App() {
       scrollTrigger: {
         trigger: ".sec3",
         start: "top top",
-        end: "+=2000",
-        anticipatePin: 1,
-        pin:true,
-        scrub: 5,
+        end: "bottom 100%",
+        scrub: 3,
         onLeave: () => {
           const img = document.querySelector('.sec3 image');
           if (img) img.setAttribute('mask', 'none');
@@ -150,16 +148,12 @@ export default function App() {
       ease: "Expo.easeInOut",
     }, 0)
 
-    // sec4 animation
-
     const tII = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec4",
-        start: "top top",
-        end: "+=2000",
-        pin:true,
-        anticipatePin: 1,
-        scrub: 4,
+        start: "top 10%",
+        end: "bottom 100%",
+        scrub: 3,
         onLeave: () => {
           const img = document.querySelector('.sec4 image');
           if (img) img.setAttribute("mask", "none")
@@ -173,13 +167,36 @@ export default function App() {
     tII.to(sec4.current, {
       ease: "Expo.easeInOut",
       transformOrigin: "50% 50%",
-      scale: 25,
+      scale: 26,
     }, 0);
     tII.to('.sec4 image', {
       scale: 0.9,
       transformOrigin: "50% 50%",
       ease: "Expo.easeInOut",
     }, 0)
+
+    const tlIII = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.sec2',
+        start: 'top top',
+        end: "+=500",
+        pin: true,
+        scrub: true,
+      }
+    });
+
+    tlIII.to('.scrollimg', {
+      opacity: 0,
+      scale: 1.1,
+      ease: "none"
+    }, 0);
+
+    tlIII.to('.scrollimg1', {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    }, 0);
+
   }, [showcontent]);
 
   return (
@@ -245,7 +262,7 @@ export default function App() {
               <img className='absolute char -bottom-[150%] left-1/2 -translate-x-1/2 scale-[1] rotate-[-20%]' src="./boy.png" alt="" />
             </div>
             {/* Bottom navbar */}
-            <div className="btmbar text-white w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0">
+            <div className="btmbar text-white w-full py-15 px-10 bg-gradient-to-t from-[black] to-transparent absolute bottom-0">
               <div className='flex gap-4 items-center text-[0.8rem] lg:text-[1.5rem]'>
                 <h3>Scroll Down</h3>
               </div>
@@ -253,20 +270,20 @@ export default function App() {
             </div>
           </div>
           {/* second page section */}
-          <div className="w-full bg-black min-h-screen flex items-center justify-center p-4">
-            <div className="cntnr grid grid-cols-1 lg:grid-cols-2 gap-10 items-center text-white w-full max-w-6xl">
+          {/* <div className="w-full bg-black min-h-screen flex items-center justify-center p-4">
+            <div className="cntnr grid grid-cols-1 lg:grid-cols-2 gap-10 items-center text-white w-full max-w-6xl"> */}
 
-              {/* Left Image */}
-              <div className="leftimg relative w-full h-64 md:h-96">
+          {/* Left Image */}
+          {/* <div className="leftimg relative w-full h-64 md:h-96">
                 <img
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.5] md:scale-[1] lg:scale-[2] max-w-full max-h-full"
                   src="./imag.png"
                   alt=""
                 />
-              </div>
+              </div> */}
 
-              {/* Right Text */}
-              <div className="rightimg text-center lg:text-left">
+          {/* Right Text */}
+          {/* <div className="rightimg text-center lg:text-left">
                 <h1 className="text-3xl md:text-5xl lg:text-[5rem] leading-tight mb-5">For PC Gamers</h1>
                 <a
                   target="_blank"
@@ -278,12 +295,23 @@ export default function App() {
                 </a>
               </div>
             </div>
+          </div> */}
+          <div className="spacer h-[50vh] bg-[black]"></div>
+
+          <div className="sec2 h-[100vh] relative overflow-hidden">
+            <div className="imgcont absolute inset-0">
+              <img className="scrollimg absolute inset-0 w-full h-full object-cover opacity-100" src="./DreQuan_Priest_landscape.jpg" />
+              <img className="scrollimg1 absolute inset-0 w-full h-full object-cover opacity-0" src="./Raul_Bautista_landscape.jpg" />
+            </div>
+            <div className=' w-full py-15 px-10 bg-gradient-to-b from-[black] to-transparent absolute top-0'></div>
+            <div className=' w-full py-15 px-10 bg-gradient-to-t from-[black] to-transparent absolute bottom-0'></div>
           </div>
 
+          {/* <div className="spacer h-[50vh] bg-[black]"></div> */}
           {/* sec 3 */}
           <div className="cont relative">
-            <div className="sec3 h-full flex justify-center">
-              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="h-screen w-full">
+            <div className="sec3 h-[400vh] flex justify-center">
+              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask">
                     <rect width="100%" height="100%" fill="black" />
@@ -316,8 +344,8 @@ export default function App() {
           </div>
           <div className="relative">
 
-            <div className="sec4 h-full flex justify-center">
-              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="h-screen w-full">
+            <div className="sec4 h-[400vh] flex justify-center">
+              <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask1">
                     <rect width="100%" height="100%" fill="black" />
@@ -339,7 +367,7 @@ export default function App() {
                 <image
                   href="/DreQuan_Priest_landscape.jpg"
                   width="100%"
-                  height="150%"
+                  height="160%"
                   mask="url(#viMask1)"
                   x="0"
                   y="0"
