@@ -115,15 +115,47 @@ export default function App() {
 
   }, [showcontent])
 
-  // sec3 and sec4 animation
+  // sec2 animation
   useGSAP(() => {
     if (!showcontent) return;
 
+    const tlIII = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.sec2',
+        start: 'top top',
+        end: "+=2000",
+        pin: true,
+        scrub: 1,
+      }
+    });
+
+    tlIII.to('.scrollimg', {
+      opacity: 0,
+      scale: 1.1,
+      ease: "none"
+    }, 0);
+
+    tlIII.to('.scrollimg1', {
+      opacity: 1,
+      scale: 1,
+      ease: "none"
+    }, 0);
+    tlIII.to('.scrollimg2', {
+      opacity: 1,
+      scale: 1.1,
+      ease: 'none'
+    }, 2);
+
+  }, [showcontent]);
+
+// sec3 animation
+
+  useGSAP(() => {
     const tI = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec3",
         start: "top top",
-        end: "bottom 100%",
+        end: "bottom bottom",
         scrub: 3,
         onLeave: () => {
           const img = document.querySelector('.sec3 image');
@@ -148,6 +180,11 @@ export default function App() {
       ease: "Expo.easeInOut",
     }, 0)
 
+  }, [showcontent])
+
+  // sec4 animation
+
+  useGSAP(()=>{
     const tII = gsap.timeline({
       scrollTrigger: {
         trigger: ".sec4",
@@ -174,30 +211,7 @@ export default function App() {
       transformOrigin: "50% 50%",
       ease: "Expo.easeInOut",
     }, 0)
-
-    const tlIII = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.sec2',
-        start: 'top top',
-        end: "+=500",
-        pin: true,
-        scrub: true,
-      }
-    });
-
-    tlIII.to('.scrollimg', {
-      opacity: 0,
-      scale: 1.1,
-      ease: "none"
-    }, 0);
-
-    tlIII.to('.scrollimg1', {
-      opacity: 1,
-      scale: 1,
-      ease: "none"
-    }, 0);
-
-  }, [showcontent]);
+  },[showcontent])
 
   return (
     <>
@@ -262,7 +276,7 @@ export default function App() {
               <img className='absolute char -bottom-[150%] left-1/2 -translate-x-1/2 scale-[1] rotate-[-20%]' src="./boy.png" alt="" />
             </div>
             {/* Bottom navbar */}
-            <div className="btmbar text-white w-full py-15 px-10 bg-gradient-to-t from-[black] to-transparent absolute bottom-0">
+            <div className="btmbar text-white w-full py-15 px-10 bg-gradient-to-t from-[#14131C] to-[transparent] absolute bottom-0">
               <div className='flex gap-4 items-center text-[0.8rem] lg:text-[1.5rem]'>
                 <h3>Scroll Down</h3>
               </div>
@@ -296,21 +310,22 @@ export default function App() {
               </div>
             </div>
           </div> */}
-          <div className="spacer h-[50vh] bg-[black]"></div>
+          <div className="spacer h-[50vh] bg-[#14131C] "></div>
 
           <div className="sec2 h-[100vh] relative overflow-hidden">
             <div className="imgcont absolute inset-0">
-              <img className="scrollimg absolute inset-0 w-full h-full object-cover opacity-100" src="./DreQuan_Priest_landscape.jpg" />
+              <img className="scrollimg absolute inset-0 w-full h-full object-cover opacity-100" src="./Boobie_Ike_02.jpg" />
               <img className="scrollimg1 absolute inset-0 w-full h-full object-cover opacity-0" src="./Raul_Bautista_landscape.jpg" />
+              <img className="scrollimg2 absolute inset-0 w-full h-full object-cover opacity-0" src="./DreQuan_Priest_03.jpg" />
             </div>
-            <div className=' w-full py-15 px-10 bg-gradient-to-b from-[black] to-transparent absolute top-0'></div>
-            <div className=' w-full py-15 px-10 bg-gradient-to-t from-[black] to-transparent absolute bottom-0'></div>
+            <div className=' w-full py-15 px-10 bg-gradient-to-b from-[#14131C] to-transparent absolute top-0'></div>
+            <div className=' w-full py-15 px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
           </div>
 
           {/* <div className="spacer h-[50vh] bg-[black]"></div> */}
           {/* sec 3 */}
-          <div className="cont relative">
-            <div className="sec3 h-[400vh] flex justify-center">
+          <div className="cont relative bg-[#14131C]">
+            <div className="sec3 flex h-[300vh]  justify-center">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask">
@@ -339,12 +354,12 @@ export default function App() {
                   className='object-cover'
                 />
               </svg>
-              <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
+              <div className='w-full py-15 px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative  ">
 
-            <div className="sec4 h-[400vh] flex justify-center">
+            <div className="sec4 flex h-[300vh] justify-center bg-[#14131C]">
               <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
                 <defs>
                   <mask id="viMask1">
