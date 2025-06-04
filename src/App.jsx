@@ -126,7 +126,7 @@ export default function App() {
       scrollTrigger:{
         trigger:'.textdiv',
         start:'top top',
-        end:'+=700',
+        end:'+=800',
         pin:true,
         scrub:3
       }
@@ -155,15 +155,13 @@ export default function App() {
 
     tlIII.to('.scrollimg1', {
       opacity: 1,
-      // scale: 1,
-      height: '100%',
+      scale: 1.1,
       ease: "none"
     }, 0);
     tlIII.to('.scrollimg2', {
       opacity: 1,
-      // scale: 1.1,
-      height: '100%',
-      ease: 'none'
+      scale: 1.1,
+      ease: 'power3.out'
     }, 1);
 
   }, [showcontent]);
@@ -333,21 +331,21 @@ export default function App() {
             </div>
           </div> */}
  
-          <div className="textdiv flex flex-wrap justify-center h-[100vh] items-center lg:text-[6rem]  text-white gap-6 bg-[#14131C] ">
+          <div className="textdiv flex flex-wrap justify-center h-[100vh] items-center text-[4rem] lg:text-[10rem]  text-white bg-[#14131C] ">
             {['If', 'anything', 'happens', "I'm", 'right', 'behind', 'you'].map((text, i) => (
-              <span key={i} className="textsec mx-2 text-[6rem] text-white gap-6 ">{text}</span>
+              <span key={i} className="textsec mx-2 text-white  leading-none">{text}</span>
             ))}
           </div>
 
 
-          <div className="sec2 h-[100vh] relative overflow-hidden">
+          <div className="sec2 h-[120vh] relative overflow-hidden">
             <div className="imgcont absolute inset-0">
               <img className="scrollimg absolute inset-0 w-full h-full object-cover opacity-100" src="./Boobie_Ike_02.jpg" />
-              <img className="scrollimg1 absolute inset-0 w-full h-[10%] object-cover opacity-0" src="./Raul_Bautista_landscape.jpg" />
-              <img className="scrollimg2 absolute inset-0 w-full h-[10%] object-cover opacity-0" src="./DreQuan_Priest_03.jpg" />
+              <img className="scrollimg1 absolute inset-0 w-full h-full object-cover opacity-0" src="./Raul_Bautista_landscape.jpg" />
+              <img className="scrollimg2 absolute inset-0 w-full h-full object-cover opacity-0" src="./DreQuan_Priest_03.jpg" />
             </div>
-            <div className=' w-full py-15 px-10 bg-gradient-to-b from-[#14131C] to-transparent absolute top-0'></div>
-            <div className=' w-full py-15 px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
+            {/* <div className=' w-full py-15 px-10 bg-gradient-to-b from-[#14131C] to-transparent absolute top-0'></div> */}
+            <div className=' w-full py-[20rem] px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
           </div>
 
           {/* <div className="spacer h-[50vh] bg-[black]"></div> */}
@@ -382,7 +380,7 @@ export default function App() {
                   className='object-cover'
                 />
               </svg>
-              <div className='w-full py-15 px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
+              <div className='w-full py-[15rem] px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
             </div>
           </div>
           {/* sec 4 */}
@@ -420,7 +418,7 @@ export default function App() {
                 />
               </svg>
             </div>
-            <div className='w-full py-15 px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
+            <div className='w-full py-[15rem] px-10 bg-gradient-to-t from-black to-transparent absolute bottom-0'></div>
           </div>
         </div>
       }
