@@ -49,7 +49,7 @@ export default function SVGMaskSection({
   }, []);
 
   return (
-    <div className={`${sectionClass} flex h-[300vh] justify-center`}>
+    <div className={`${sectionClass} flex ${sectionClass === 'sec4' ? "h-[350vh]" : "h-[300vh]"} justify-center`}>
       <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
         <defs>
           <mask id={maskId}>
@@ -80,7 +80,7 @@ export default function SVGMaskSection({
           y="0"
         />
       </svg>
-      <div className='w-full py-[15rem] px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
+      <div className='w-full py-[15rem] px-10 bg-gradient-to-t from-[#283D61] to-transparent absolute bottom-0'></div>
     </div>
   );
 }

@@ -16,9 +16,10 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function App() {
 
 
-  const lenis = new Lenis();
+  const lenis = new Lenis({
+    duration:2
+  });
 
-  // Use requestAnimationFrame to continuously update the scroll
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -62,7 +63,7 @@ export default function App() {
           <TextAnimation />
           <ScrollImageSection />
 
-          <div className="contsec3 relative bg-[#14131C]">
+          <div className="contsec3 relative bg-[#283D61]">
             <SVGMaskSection
               id="sec3"
               maskId="viMask"
@@ -74,7 +75,7 @@ export default function App() {
             />
           </div>
 
-          <div className="relative bg-[#14131C]">
+          <div className="relative bg-[#283D61]">
             <SVGMaskSection
               id="sec4"
               maskId="viMask1"

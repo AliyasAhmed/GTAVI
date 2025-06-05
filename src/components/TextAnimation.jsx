@@ -23,10 +23,16 @@ export default function TextAnimation() {
   }, []);
 
   return (
-    <div className="textdiv flex flex-wrap justify-center h-[100vh] items-center text-[4rem] lg:text-[10rem] text-white bg-[#14131C] gap-10">
-      {['If', 'anything', 'happens', "I'm", 'right', 'behind', 'you'].map((text, i) => (
-        <span key={i} className="textsec mx-2 text-white leading-none">{text}</span>
-      ))}
-    </div>
+<div className="textdiv flex flex-wrap justify-center items-center h-screen gap-10 bg-[#14131C]">
+  {['If', 'anything', 'happens', "I'm", 'right', 'behind', 'you'].map((text, i) => (
+    <span
+      key={i}
+      className="textsec text-transparent bg-clip-text bg-gradient-to-l from-[#A9BFCA]  to-[#14131C] text-[4rem] lg:text-[10rem] leading-none"
+    >
+      {text}
+    </span>
+  ))}
+</div>
+
   );
 }
