@@ -66,8 +66,8 @@ export default function HeroSection() {
       });
       
       gsap.to('.sky', {
-        x: `${xMove * 0.3}%`,
-        y: `${yMove * 0.3}%`
+        x: `${xMove * 0.2}%`,
+        y: `${yMove * 0.2}%`
       });
       
       gsap.to('.bg', {
@@ -110,6 +110,7 @@ export default function HeroSection() {
             <h1 
               className={`text-[8rem] leading-none ${i === 1 ? 'ml-10' : '-ml-20'}`} 
               key={i}
+              style={{textShadow: '0px 0px 10px white'}}
             >
               {text}
             </h1>

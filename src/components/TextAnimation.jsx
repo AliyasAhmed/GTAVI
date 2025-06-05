@@ -27,7 +27,7 @@ export default function TextAnimation() {
   {['If', 'anything', 'happens', "I'm", 'right', 'behind', 'you'].map((text, i) => (
     <span
       key={i}
-      className="textsec text-transparent bg-clip-text bg-gradient-to-l from-[#A9BFCA]  to-[#14131C] text-[4rem] lg:text-[10rem] leading-none"
+      className="textsec text-transparent bg-clip-text bg-gradient-to-l from-[#8484CA]  to-[#14131C] text-[4rem] lg:text-[10rem] leading-none"
     >
       {text}
     </span>
