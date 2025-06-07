@@ -24,10 +24,10 @@ export default function TextAnimation() {
 
   return (
 <div className="textdiv flex flex-wrap justify-center items-center h-screen gap-10 bg-[#14131C]">
-  {['If', 'anything', 'happens', "I'm", 'right', 'behind', 'you'].map((text, i) => (
+  {['"If', 'anything', 'happens', "I'm", 'right', 'behind', 'you"'].map((text, i) => (
     <span
       key={i}
-      className="textsec text-transparent bg-clip-text bg-gradient-to-l from-[#8484CA]  to-[#14131C] text-[4rem] lg:text-[10rem] leading-none"
+      className="textsec text-transparent bg-clip-text bg-gradient-to-r from-[#FFF9CB]  to-[#FFF9CB] text-[4rem] lg:text-[10rem] leading-none"
     >
       {text}
     </span>

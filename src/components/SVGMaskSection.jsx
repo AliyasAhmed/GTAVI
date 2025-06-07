@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,7 +12,8 @@ export default function SVGMaskSection({
   fontSize,
   imageUrl,
   scaleTarget,
-  sectionClass
+  sectionClass,
+  transformOrigin,
 }) {
   const maskRef = useRef(null);
 
@@ -22,7 +23,7 @@ export default function SVGMaskSection({
         trigger: `.${sectionClass}`,
         start: "top top",
         end: "bottom bottom",
-        scrub: 3,
+        scrub: true,
         onLeave: () => {
           const img = document.querySelector(`.${sectionClass} image`);
           if (img) img.setAttribute('mask', 'none');
@@ -36,7 +37,7 @@ export default function SVGMaskSection({
 
     tI.to(maskRef.current, {
       ease: "Expo.easeInOut",
-      transformOrigin: "50% 50%",
+      transformOrigin: `${transformOrigin}`,
       scale: scaleTarget,
     }, 0);
 
@@ -49,7 +50,7 @@ export default function SVGMaskSection({
   }, []);
 
   return (
-    <div className={`${sectionClass} flex ${sectionClass === 'sec4' ? "h-[350vh]" : "h-[300vh]"} justify-center`}>
+    <div className={`${sectionClass} flex ${sectionClass === 'sec4' ? "h-[300vh]" : "h-[250vh]"} justify-center`}>
       <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" className="sticky top-0 h-screen w-full">
         <defs>
           <mask id={maskId}>
@@ -62,7 +63,7 @@ export default function SVGMaskSection({
                 textAnchor="middle"
                 fill="white"
                 dominantBaseline="middle"
-                fontFamily="Arial Black"
+                fontFamily="Arial Black, Arial, sans-serif"
               >
                 {text}
               </text>
@@ -80,7 +81,7 @@ export default function SVGMaskSection({
           y="0"
         />
       </svg>
-      <div className='w-full py-[15rem] px-10 bg-gradient-to-t from-[#283D61] to-transparent absolute bottom-0'></div>
+      <div className='w-full py-[15rem] px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
     </div>
   );
 }

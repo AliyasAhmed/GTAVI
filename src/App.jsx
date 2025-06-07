@@ -8,6 +8,7 @@ import TextAnimation from './components/TextAnimation';
 import ScrollImageSection from './components/ScrollImageSection';
 import SVGMaskSection from './components/SVGMaskSection';
 import Lenis from 'lenis'
+import ImageSec from './components/ImageSec';
 
 
 
@@ -17,7 +18,7 @@ export default function App() {
 
 
   const lenis = new Lenis({
-    duration:2
+    duration: 2
   });
 
   function raf(time) {
@@ -63,27 +64,35 @@ export default function App() {
           <TextAnimation />
           <ScrollImageSection />
 
-          <div className="contsec3 relative bg-[#283D61]">
+          <div className="contsec3 relative bg-[#14131C]">
             <SVGMaskSection
               id="sec3"
               maskId="viMask"
               text="GTA"
               fontSize="700%"
               imageUrl="/Jason_and_Lucia_02_With_Logos_landscape.jpg"
-              scaleTarget={90}
+              scaleTarget={105}
               sectionClass="sec3"
+              transformOrigin={'50% 50%'}
             />
           </div>
+          <div className='bg-[#723D5B]'>
 
-          <div className="relative bg-[#283D61]">
+            <ImageSec
+              images={'./Jason_and_Lucia_Motel_landscape.jpg'}
+              sectionClass={'sec5'}
+            />
+          </div>
+          <div className="relative bg-[#723D5B]">
             <SVGMaskSection
               id="sec4"
               maskId="viMask1"
               text="VI"
               fontSize="250"
               imageUrl="/DreQuan_Priest_landscape.jpg"
-              scaleTarget={26}
+              scaleTarget={20}
               sectionClass="sec4"
+              transformOrigin={'80% 50%'}
             />
           </div>
         </div>
