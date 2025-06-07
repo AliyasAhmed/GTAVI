@@ -61,7 +61,10 @@ export default function App() {
       {showContent && (
         <div className='all w-full'>
           <HeroSection />
-          <TextAnimation />
+          <TextAnimation
+            text={['"If', 'anything', 'happens', "I'm", 'right', 'behind', 'you"']}
+            sectionClass={'textsec2'}
+          />
           <ScrollImageSection />
 
           <div className="contsec3 relative bg-[#14131C]">
@@ -76,14 +79,21 @@ export default function App() {
               transformOrigin={'50% 50%'}
             />
           </div>
-          <div className='bg-[#723D5B]'>
+
+          <TextAnimation
+            text={['"The', 'only', 'thing', "that", 'matters', 'behind', 'is', 'who', 'you', 'know', 'and' ,'what', 'you', 'got']}
+            sectionClass={'textsec3'}
+          />
+          
+          <div className='bg-[#14131C] relative'>
 
             <ImageSec
               images={'./Jason_and_Lucia_Motel_landscape.jpg'}
               sectionClass={'sec5'}
             />
+            <div className='w-full py-[10rem] px-10 bg-gradient-to-t from-[#14131C] to-transparent absolute bottom-0'></div>
           </div>
-          <div className="relative bg-[#723D5B]">
+          <div className="relative bg-[#14131C]">
             <SVGMaskSection
               id="sec4"
               maskId="viMask1"
