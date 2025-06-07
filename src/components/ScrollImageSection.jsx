@@ -37,7 +37,7 @@ export default function ScrollImageSection() {
   }, []);
 
   return (
-    <div className="sec2 h-[130vh] relative overflow-hidden bg-[#14131C]">
+    <div className="sec2 h-[120vh] relative overflow-hidden bg-[#14131C]">
       <div className="imgcont absolute inset-0" style={{ clipPath: "polygon(0 5%, 100% 0, 100% 100%, 0 96%)" }}
 >
         <img className="scrollimg absolute inset-0 w-full h-full object-cover opacity-100" src="./Boobie_Ike_02.jpg" />

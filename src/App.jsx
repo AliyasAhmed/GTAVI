@@ -77,11 +77,13 @@ export default function App() {
               scaleTarget={105}
               sectionClass="sec3"
               transformOrigin={'50% 50%'}
+              height={'70vh'}
             />
           </div>
 
           <TextAnimation
-            text={['"The', 'only', 'thing', "that", 'matters', 'behind', 'is', 'who', 'you', 'know', 'and' ,'what', 'you', 'got']}
+            text={"The only thing that matters is who you know and what you got".split(" ")}
+
             sectionClass={'textsec3'}
           />
           
@@ -99,10 +101,11 @@ export default function App() {
               maskId="viMask1"
               text="VI"
               fontSize="250"
-              imageUrl="/DreQuan_Priest_landscape.jpg"
+              imageUrl="/DreQuan_Priest_03.jpg"
               scaleTarget={20}
               sectionClass="sec4"
               transformOrigin={'80% 50%'}
+              height={'85vh'}
             />
           </div>
         </div>

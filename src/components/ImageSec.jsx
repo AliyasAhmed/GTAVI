@@ -23,7 +23,7 @@ export default function ImageSec({ images, sectionClass, id }) {
 
   return (
     <div
-      className={`parallax-section ${sectionClass} w-full h-[100vh] overflow-hidden relative`}
+      className={`parallax-section ${sectionClass} w-full h-screen overflow-hidden relative`}
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 91%)" }}
     >
       <img

@@ -14,6 +14,7 @@ export default function SVGMaskSection({
   scaleTarget,
   sectionClass,
   transformOrigin,
+  height
 }) {
   const maskRef = useRef(null);
 
@@ -42,7 +43,8 @@ export default function SVGMaskSection({
     }, 0);
 
     tI.to(`.${sectionClass} image`, {
-      scale: 0.9,
+      // scale: 1,
+      height:height,
       transformBox: "fill-box",
       transformOrigin: "50% 50%",
       ease: "Expo.easeInOut",
@@ -73,10 +75,10 @@ export default function SVGMaskSection({
         <image
           href={imageUrl}
           width="100%"
-          height={sectionClass === 'sec4' ? "160%" : "100%"}
+          // height={sectionClass === 'sec4' ? "160%" : "100%"}
           preserveAspectRatio="xMidYMid slice"
           mask={`url(#${maskId})`}
-          className='object-cover'
+          className='object-cover h-[90vh] w-full'
           x="0"
           y="0"
         />
