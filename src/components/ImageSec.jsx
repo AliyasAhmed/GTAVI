@@ -10,7 +10,7 @@ export default function ImageSec({ images, sectionClass, id }) {
 
   useGSAP(() => {
     gsap.to(imgRef.current, {
-      y: "-15%",
+      yPercent: -10,
       ease: "none",
       scrollTrigger: {
         trigger: `.${sectionClass}`,
@@ -26,12 +26,15 @@ export default function ImageSec({ images, sectionClass, id }) {
       className={`parallax-section ${sectionClass} w-full h-screen overflow-hidden relative`}
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 91%)" }}
     >
-      <img
-        ref={imgRef}
-        src={images}
-        alt=""
-        className="absolute top-0 left-0 w-full h-[120%] object-cover"
-      />
+      <div className="flex justify-center items-center h-full">
+
+        <img
+          ref={imgRef}
+          src={images}
+          alt=""
+          className="absolute top-0 w-full h-[120%] object-cover"
+        />
+      </div>
     </div>
   );
 }
